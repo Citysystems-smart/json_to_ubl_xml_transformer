@@ -55,26 +55,27 @@ class JSONTransformer(object):
             return item_dict
 
         for name, item in six.iteritems(deepcopy(item_dict)):
-            child_name = self.transform_name(name)
-            if name.startswith(ATTRIBUTE_PREFIX) and name != VALUE_ATTRIBUTE:
-                item_dict[child_name] = item
-                del item_dict[name]
+            if "comment" not in name:
+                child_name = self.transform_name(name)
+                if name.startswith(ATTRIBUTE_PREFIX) and name != VALUE_ATTRIBUTE:
+                    item_dict[child_name] = item
+                    del item_dict[name]
 
-            elif name == VALUE_ATTRIBUTE:
-                item_dict[self.transform_name(name)] = item
-                del item_dict[name]
+                elif name == VALUE_ATTRIBUTE:
+                    item_dict[self.transform_name(name)] = item
+                    del item_dict[name]
 
-            elif isinstance(item, dict):
-                item_dict[child_name] = self.transform_dict(item)
-                del item_dict[name]
+                elif isinstance(item, dict):
+                    item_dict[child_name] = self.transform_dict(item)
+                    del item_dict[name]
 
-            elif isinstance(item, list):
-                item_dict[child_name] = self.transform_list(item)
-                del item_dict[name]
+                elif isinstance(item, list):
+                    item_dict[child_name] = self.transform_list(item)
+                    del item_dict[name]
 
-            else:
-                item_dict[child_name] = item
-                del item_dict[name]
+                else:
+                    item_dict[child_name] = item
+                    del item_dict[name]
 
         return item_dict
 
