@@ -39,7 +39,7 @@ class JSONTransformer(object):
     def transform_list(self, item_list):
         if not isinstance(item_list, list):
             return item_list
-
+        print([self.transform_dict(item) for item in item_list])
         return [self.transform_dict(item) for item in item_list]
 
     def transform_dict(self, item_dict):
