@@ -39,7 +39,6 @@ UBL_INVOICE_ROOT = OrderedDict(
             OrderedDict(
                 [
                     (XML_NAMESPACES, NAMESPACES),
-                    (CBC("CustomizationID"), BILLING_NAMESPACE),
                     (CBC("ProfileID"), PROFILE_NAMESPACE),
                 ]
             ),
@@ -82,6 +81,7 @@ CBC_ELEMENTS = (
     "InvoicedQuantity",
     "InvoiceTypeCode",
     "IssueDate",
+    "IssueTime",
     "Line",
     "LineExtensionAmount",
     "LineID",
