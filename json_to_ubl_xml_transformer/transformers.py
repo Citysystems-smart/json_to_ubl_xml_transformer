@@ -85,7 +85,8 @@ class JSONTransformer(object):
         for name, item in six.iteritems(input_json["Invoice"]):
             item_name = self.transform_name(name)
             if isinstance(item, dict):
-                invoice[item_name] = self.transform_dict(item)
+                if "comment" not in name:
+                    invoice[item_name] = self.transform_dict(item)
 
             elif isinstance(item, list):
                 invoice[item_name] = self.transform_list(item)
