@@ -49,6 +49,7 @@ UBL_INVOICE_ROOT = OrderedDict(
 
 CBC_ELEMENTS = (
     "UUID",
+    "PlotIdentification",
     "CitySubdivisionName",
     "BuildingNumber",
     "BuildingName",
