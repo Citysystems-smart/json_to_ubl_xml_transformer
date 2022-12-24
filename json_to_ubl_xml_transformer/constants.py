@@ -24,12 +24,14 @@ CAC_NAMESPACE = (
 )
 CBC_NAMESPACE = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 
+EXT_NAMESPACE = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+
 NAMESPACE = "{}:{{}}".format
 CBC = NAMESPACE("cbc").format
 CAC = NAMESPACE("cac").format
 
 NAMESPACES = OrderedDict(
-    [("cac", CAC_NAMESPACE), ("cbc", CBC_NAMESPACE), ("", INVOICE_NAMESPACE)]
+    [("cac", CAC_NAMESPACE), ("cbc", CBC_NAMESPACE), ("", INVOICE_NAMESPACE), ("ext", EXT_NAMESPACE)]
 )
 
 UBL_INVOICE_ROOT = OrderedDict(
