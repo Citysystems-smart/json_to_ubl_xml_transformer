@@ -126,4 +126,5 @@ CBC_ELEMENTS = (
     "Telephone",
     "URI",
     "Value",
+    "InstructionNote"
 )
