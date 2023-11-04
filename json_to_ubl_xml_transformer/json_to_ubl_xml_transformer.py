@@ -70,6 +70,7 @@ def intermediate_json_to_xml(intermediate_json, output_xml=None):
     output_xml.write(output)
     output_xml.flush()
     output_xml.close()
+    return output
 
 
 def to_intermediate_json(input_dict, transformer=None):
